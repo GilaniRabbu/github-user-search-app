@@ -1,35 +1,43 @@
 import { GitHubUser } from "@/types/github";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import StatItem from "./StatItem";
 
 export default function UserProfile({ user }: { user: GitHubUser }) {
   return (
-    <div className="mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 w-full max-w-2xl">
-      <div className="flex items-center gap-6">
+    <div className="mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 w-full max-w-2xl border border-gray-100 dark:border-gray-800">
+      <div className="flex items-start gap-6">
         <img
           src={user.avatar_url}
           alt={user.login}
-          className="w-24 h-24 rounded-full border-4 border-blue-500"
+          className="w-28 h-28 rounded-2xl border-4 border-indigo-100 dark:border-indigo-900/50 shadow-sm"
         />
-        <div className="space-y-2">
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-            {user.name || user.login}
-          </h1>
-          {user.bio && (
-            <p className="text-gray-600 dark:text-gray-300">{user.bio}</p>
-          )}
-          <p className="text-sm text-gray-500">GitHub ID: {user.id}</p>
-          <div className="flex gap-4 text-gray-600 dark:text-gray-400">
-            <span>Repos: {user.public_repos}</span>
-            <span>Followers: {user.followers}</span>
-            <span>Following: {user.following}</span>
+        <div className="flex-1 space-y-3">
+          <div className="flex items-baseline gap-4">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+              {user.name || user.login}
+            </h1>
+            <a
+              href={user.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline"
+            >
+              @{user.login}
+              <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+            </a>
           </div>
-          <a
-            href={user.html_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:underline"
-          >
-            Visit GitHub Profile
-          </a>
+          <p className="text-sm text-gray-500">GitHub ID: {user.id}</p>
+          {user.bio && (
+            <p className="text-gray-600 dark:text-gray-300 text-lg leading-snug">
+              {user.bio}
+            </p>
+          )}
+
+          <div className="flex gap-6 pt-2">
+            <StatItem label="Repositories" value={user.public_repos} />
+            <StatItem label="Followers" value={user.followers} />
+            <StatItem label="Following" value={user.following} />
+          </div>
         </div>
       </div>
     </div>
