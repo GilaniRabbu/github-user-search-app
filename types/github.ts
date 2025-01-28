@@ -8,4 +8,9 @@ export interface GitHubUser {
   public_repos: number;
   followers: number;
   following: number;
+  created_at: string;
+  location: string;
+  blog: string;
+  twitter_username?: string;
+  company?: string;
 }

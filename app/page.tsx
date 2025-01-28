@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import SearchForm from "@/components/SearchForm";
 import UserProfile from "@/components/UserProfile";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { GitHubUser } from "@/types/github";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 
 export default function HomePage() {
   const [user, setUser] = useState<GitHubUser | null>(null);
@@ -44,6 +45,8 @@ export default function HomePage() {
         dev.finder
       </h1>
 
+      <ThemeToggle />
+
       <SearchForm onSearch={handleSearch} />
 
       {isLoading && <LoadingSpinner />}
@@ -56,5 +59,27 @@ export default function HomePage() {
 
       {user && <UserProfile user={user} />}
     </div>
+  );
+}
+
+function ThemeToggle() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+  }, [darkMode]);
+
+  return (
+    <button
+      onClick={() => setDarkMode(!darkMode)}
+      className="flex items-center gap-2 text-gray-600 dark:text-gray-300"
+    >
+      {darkMode ? "LIGHT" : "DARK"}
+      {darkMode ? (
+        <SunIcon className="w-6 h-6" />
+      ) : (
+        <MoonIcon className="w-6 h-6" />
+      )}
+    </button>
   );
 }

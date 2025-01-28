@@ -14,26 +14,23 @@ export default function SearchForm({
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="w-full max-w-2xl mx-auto group relative transition-all duration-300"
-    >
-      <div className="relative">
+    <div className="bg-gray-100 dark:bg-blue-900 rounded-xl p-4 shadow-sm">
+      <form onSubmit={handleSubmit} className="flex items-center gap-4">
+        <MagnifyingGlassIcon className="w-8 h-8 text-blue-500 dark:text-white" />
         <input
           type="text"
           value={login}
           onChange={(e) => setLogin(e.target.value)}
           placeholder="Enter GitHub username..."
-          className="w-full pl-12 pr-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-800/50 transition-all shadow-sm hover:shadow-md"
+          className="flex-1 bg-transparent text-xl placeholder-gray-400 dark:placeholder-gray-300 focus:outline-none"
         />
-        <MagnifyingGlassIcon className="w-6 h-6 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
         <button
           type="submit"
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-colors shadow-sm hover:shadow-md"
+          className="bg-blue-500 text-white px-8 py-3 rounded-xl hover:bg-blue-600 transition-colors text-lg font-bold"
         >
           Search
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }

@@ -25,6 +25,11 @@ export async function GET(request: Request) {
       public_repos: response.data.public_repos,
       followers: response.data.followers,
       following: response.data.following,
+      created_at: response.data.created_at,
+      location: response.data.location,
+      blog: response.data.blog,
+      twitter_username: response.data.twitter_username,
+      company: response.data.company,
     };
 
     return NextResponse.json({ user: userData });

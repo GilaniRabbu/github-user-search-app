@@ -1,11 +1,9 @@
 const StatItem = ({ label, value }: { label: string; value: number }) => (
-  <div className="flex flex-col p-3 rounded bg-blue-50 dark:bg-slate-800">
-    <span className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide">
-      {label}
-    </span>
-    <span className="text-2xl font-semibold text-gray-900 dark:text-white">
+  <div className="text-center">
+    <div className="text-lg text-gray-600 dark:text-gray-300">{label}</div>
+    <div className="text-3xl font-bold text-gray-800 dark:text-white mt-2">
       {value}
-    </span>
+    </div>
   </div>
 );
 
