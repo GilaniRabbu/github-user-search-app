@@ -40,7 +40,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto space-y-10 py-10">
+    <div className="max-w-5xl mx-auto space-y-5 py-10">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-space-bold text-blue-900 dark:text-white">
           dev.finder
