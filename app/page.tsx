@@ -73,9 +73,8 @@ function ThemeToggle() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="flex items-center gap-2 text-blue-900 dark:text-white"
+      className="px-2 text-blue-900 dark:text-white"
     >
-      {darkMode ? "LIGHT" : "DARK"}
       {darkMode ? (
         <SunIcon className="w-6 h-6" />
       ) : (

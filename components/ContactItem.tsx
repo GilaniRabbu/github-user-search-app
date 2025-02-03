@@ -11,14 +11,14 @@ const ContactItem = ({
   isLink?: boolean;
   link?: string;
 }) => (
-  <div className="flex items-center gap-4 text-gray-600 dark:text-gray-300">
+  <div className="flex items-center gap-4 text-blue-800 dark:text-blue-500">
     {icon}
     {isLink && link ? (
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="transition-colors hover:text-blue-500"
+        className="transition-colors hover:text-blue-600"
       >
         {text}
       </a>
