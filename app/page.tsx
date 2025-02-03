@@ -42,9 +42,7 @@ export default function HomePage() {
   return (
     <div className="max-w-5xl mx-auto space-y-5 py-10">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-space-bold text-blue-900 dark:text-white">
-          dev.finder
-        </h1>
+        <h1 className="text-2xl font-space-bold">dev.finder</h1>
         <ThemeToggle />
       </div>
 
@@ -71,10 +69,7 @@ function ThemeToggle() {
   }, [darkMode]);
 
   return (
-    <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="px-2 text-blue-900 dark:text-white"
-    >
+    <button onClick={() => setDarkMode(!darkMode)}>
       {darkMode ? (
         <SunIcon className="w-6 h-6" />
       ) : (
