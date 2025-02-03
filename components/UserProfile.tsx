@@ -8,7 +8,6 @@ import {
 import StatItem from "./StatItem";
 import ContactItem from "./ContactItem";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function UserProfile({ user }: { user: GitHubUser }) {
   const formattedDate = new Date(user.created_at).toLocaleDateString(
@@ -23,11 +22,9 @@ export default function UserProfile({ user }: { user: GitHubUser }) {
   return (
     <div className="p-8 rounded-xl shadow bg-white dark:bg-blue-800">
       <div className="lg:flex lg:gap-8">
-        <Image
+        <img
           src={user.avatar_url}
           alt={user.login}
-          width={192}
-          height={192}
           className="w-48 h-48 rounded-full"
         />
 
