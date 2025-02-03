@@ -40,19 +40,20 @@ export default function HomePage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
-      <h1 className="text-2xl font-bold text-center text-gray-900 dark:text-white">
-        dev.finder
-      </h1>
-
-      <ThemeToggle />
+    <div className="max-w-5xl mx-auto space-y-10 py-10">
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-space-bold text-blue-900 dark:text-white">
+          dev.finder
+        </h1>
+        <ThemeToggle />
+      </div>
 
       <SearchForm onSearch={handleSearch} />
 
       {isLoading && <LoadingSpinner />}
 
       {error && (
-        <div className="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 p-4 rounded-lg text-center">
+        <div className="p-4 rounded-lg text-center bg-red-100 dark:bg-red-900 text-red-900 dark:text-red-100">
           {error}
         </div>
       )}
@@ -72,7 +73,7 @@ function ThemeToggle() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="flex items-center gap-2 text-gray-600 dark:text-gray-300"
+      className="flex items-center gap-2 text-blue-900 dark:text-white"
     >
       {darkMode ? "LIGHT" : "DARK"}
       {darkMode ? (

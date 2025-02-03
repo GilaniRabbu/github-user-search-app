@@ -14,7 +14,7 @@ export default function SearchForm({
   };
 
   return (
-    <div className="bg-gray-100 dark:bg-blue-900 rounded-xl p-4 shadow-sm">
+    <div className="p-4 shadow rounded-xl bg-white dark:bg-blue-800">
       <form onSubmit={handleSubmit} className="flex items-center gap-4">
         <MagnifyingGlassIcon className="w-8 h-8 text-blue-500 dark:text-white" />
         <input
@@ -22,11 +22,11 @@ export default function SearchForm({
           value={login}
           onChange={(e) => setLogin(e.target.value)}
           placeholder="Enter GitHub username..."
-          className="flex-1 bg-transparent text-xl placeholder-gray-400 dark:placeholder-gray-300 focus:outline-none"
+          className="flex-1 text-xl bg-transparent text-blue-900 dark:text-white focus:outline-none placeholder-blue-400 dark:placeholder-blue-200"
         />
         <button
           type="submit"
-          className="bg-blue-500 text-white px-8 py-3 rounded-xl hover:bg-blue-600 transition-colors text-lg font-bold"
+          className="px-8 py-3 rounded-xl text-lg font-space-bold transition-colors bg-blue-500 text-white hover:bg-blue-600"
         >
           Search
         </button>
