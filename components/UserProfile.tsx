@@ -28,7 +28,7 @@ export default function UserProfile({ user }: { user: GitHubUser }) {
           className="w-48 h-48 rounded-full"
         />
 
-        <div className="mt-5 lg:mt-0">
+        <div className="mt-5 lg:mt-0 flex-1">
           <div>
             <h1 className="text-3xl font-space-bold mb-2 uppercase text-blue-900 dark:text-white">
               {user.name || "Not Available"}
