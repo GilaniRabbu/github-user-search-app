@@ -1,10 +1,6 @@
 import { GitHubUser } from "@/types/github";
-import {
-  LinkIcon,
-  MapPinIcon,
-  XMarkIcon,
-  BuildingOffice2Icon,
-} from "@heroicons/react/24/outline";
+import { BsBuildings } from "react-icons/bs";
+import { FaLocationDot, FaLink, FaXTwitter } from "react-icons/fa6";
 import StatItem from "./StatItem";
 import ContactItem from "./ContactItem";
 import Link from "next/link";
@@ -33,7 +29,11 @@ export default function UserProfile({ user }: { user: GitHubUser }) {
             <h1 className="text-3xl font-space-bold mb-2 uppercase">
               {user.name || "Not Available"}
             </h1>
-            <Link href={user.html_url} target="_blank" className="text-xl">
+            <Link
+              href={user.html_url}
+              target="_blank"
+              className="text-xl font-space-bold"
+            >
               @{user.login}
             </Link>
             <p className="text-sm mt-2">Joined {formattedDate}</p>
@@ -55,24 +55,24 @@ export default function UserProfile({ user }: { user: GitHubUser }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
             <ContactItem
-              icon={<MapPinIcon className="w-6 h-6" />}
+              icon={<FaLocationDot className="w-6 h-6" />}
               text={user.location || "Not Available"}
             />
             <ContactItem
-              icon={<LinkIcon className="w-6 h-6" />}
-              text={user.blog ? `@${user.login}` : "Not Available"}
+              icon={<FaLink className="w-6 h-6" />}
+              text={user.blog ? `${user.login}` : "Not Available"}
               isLink={!!user.blog}
               link={user.blog}
             />
             <ContactItem
-              icon={<BuildingOffice2Icon className="w-6 h-6" />}
+              icon={<BsBuildings className="w-6 h-6" />}
               text={user.company || "Not Available"}
             />
             <ContactItem
-              icon={<XMarkIcon className="w-6 h-6" />}
+              icon={<FaXTwitter className="w-6 h-6" />}
               text={
                 user.twitter_username
-                  ? `@${user.twitter_username}`
+                  ? `${user.twitter_username}`
                   : "Not Available"
               }
               isLink={!!user.twitter_username}

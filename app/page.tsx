@@ -6,7 +6,7 @@ import SearchForm from "@/components/SearchForm";
 import UserProfile from "@/components/UserProfile";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { GitHubUser } from "@/types/github";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
 
 export default function HomePage() {
   const [user, setUser] = useState<GitHubUser | null>(null);
@@ -71,9 +71,9 @@ function ThemeToggle() {
   return (
     <button onClick={() => setDarkMode(!darkMode)}>
       {darkMode ? (
-        <SunIcon className="w-6 h-6" />
+        <MdOutlineLightMode className="w-6 h-6" />
       ) : (
-        <MoonIcon className="w-6 h-6" />
+        <MdOutlineDarkMode className="w-6 h-6" />
       )}
     </button>
   );
