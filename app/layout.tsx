@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="h-full bg-[#F7F9F5] dark:bg-[#080A06] text-[#11160E] dark:text-[#ECF1E9]">
+      <body className="h-full transition-all duration-300 bg-[#F7F9F5] dark:bg-[#080A06] text-[#11160E] dark:text-[#ECF1E9]">
         <main className="min-h-full p-4">{children}</main>
       </body>
     </html>

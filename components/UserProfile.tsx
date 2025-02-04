@@ -21,22 +21,29 @@ export default function UserProfile({ user }: { user: GitHubUser }) {
         <img
           src={user.avatar_url}
           alt={user.login}
-          className="w-48 h-48 rounded-full"
+          className="w-48 h-48 rounded-full hidden lg:block"
         />
 
         <div className="mt-5 lg:mt-0 flex-1">
-          <div>
-            <h1 className="text-3xl font-space-bold mb-2 uppercase">
-              {user.name || "Not Available"}
-            </h1>
-            <Link
-              href={user.html_url}
-              target="_blank"
-              className="text-xl font-space-bold"
-            >
-              @{user.login}
-            </Link>
-            <p className="text-sm mt-2">Joined {formattedDate}</p>
+          <div className="flex items-start sm:items-center gap-5 flex-col sm:flex-row">
+            <img
+              src={user.avatar_url}
+              alt={user.login}
+              className="w-40 h-40 rounded-full block lg:hidden"
+            />
+            <div>
+              <h1 className="text-3xl font-space-bold mb-2 uppercase">
+                {user.name || "Not Available"}
+              </h1>
+              <Link
+                href={user.html_url}
+                target="_blank"
+                className="text-xl font-space-bold"
+              >
+                @{user.login}
+              </Link>
+              <p className="text-sm mt-2">Joined {formattedDate}</p>
+            </div>
           </div>
 
           {user.bio ? (
@@ -46,7 +53,7 @@ export default function UserProfile({ user }: { user: GitHubUser }) {
           )}
 
           <div className="p-5 mt-8 rounded-xl bg-[#E9F2E2] dark:bg-[#141D0D]">
-            <div className="flex gap-5 justify-around flex-wrap">
+            <div className="flex gap-10 sm:gap-5 justify-around flex-col sm:flex-row">
               <StatItem label="Repos" value={user.public_repos} />
               <StatItem label="Followers" value={user.followers} />
               <StatItem label="Following" value={user.following} />

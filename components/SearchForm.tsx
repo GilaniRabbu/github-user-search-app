@@ -19,7 +19,7 @@ export default function SearchForm({
           type="text"
           value={login}
           onChange={(e) => setLogin(e.target.value)}
-          placeholder="Enter GitHub username..."
+          placeholder="Enter GitHub Username"
           className="text-xl px-6 py-4 shadow rounded-xl w-full bg-[#B1D496] dark:bg-[#46692B] focus:outline-none placeholder-[#46692B] dark:placeholder-[#B1D496]"
         />
         <button

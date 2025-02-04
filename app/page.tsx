@@ -40,7 +40,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto space-y-5 py-10">
+    <section className="max-w-5xl mx-auto space-y-5 py-10">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-space-bold">dev.finder</h1>
         <ThemeToggle />
@@ -57,7 +57,7 @@ export default function HomePage() {
       )}
 
       {user && <UserProfile user={user} />}
-    </div>
+    </section>
   );
 }
 
